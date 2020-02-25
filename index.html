@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIR QUALITY APPLICATION GENERIC VERSION</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+</head>
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color = "primary">
+                <ion-title>
+                    AIR QUALITY APPLICATION
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size-sm="3" offset-sm="0">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>
+                                    USER INFROMATION
+                                </ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <ion-item>
+                                    <ion-label position="floating">Name</ion-label>
+                                    <ion-input type="text" id = "name"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Primary Address</ion-label>
+                                    <ion-input type="text" id = "address"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">City</ion-label>
+                                    <ion-input type="text" id = "city"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Country</ion-label>
+                                    <ion-input type="text" id = "country"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Zip code</ion-label>
+                                    <ion-input type="text" id = "zip"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Cell Phone</ion-label>
+                                    <ion-input type="text" id = "phone"></ion-input>
+                                </ion-item>
+                                <div class="ion-margin-vertical ion-text-right">
+                                    <ion-button id ="submit1" fill = "outline" color="success"><ion-icon slot = "start" name = "cloud-upload-outline"></ion-icon>SUBMIT</ion-button>
+                                    <ion-button id = "clear1" fill = "outline" color="danger"><ion-icon slot = "start" name = "close"></ion-icon>CLEAR</ion-button>
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                    <ion-col size-sm="3" offset-sm="0">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>
+                                    DATA ENTRY
+                                </ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <ion-item>
+                                    <ion-label position="floating">Temperature</ion-label>
+                                    <ion-input type="text" id = "temperature"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Humidity</ion-label>
+                                    <ion-input type="text" id = "humidity"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">PM2.5</ion-label>
+                                    <ion-input type="text" id = "pm25"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">PM10</ion-label>
+                                    <ion-input type="text" id = "pm10"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Nitrogen Dioxide</ion-label>
+                                    <ion-input type="text" id = "no2"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Ozone (O3)</ion-label>
+                                    <ion-input type="text" id = "o3"></ion-input>
+                                </ion-item>
+                                <div class="ion-margin-vertical ion-text-right">
+                                    <ion-button id ="submit2" fill = "outline" color="success"><ion-icon slot = "start" name = "cloud-upload-outline"></ion-icon>UPLOAD</ion-button>
+                                    <ion-button id = "clear2" fill = "outline" color="danger"><ion-icon slot = "start" name = "close"></ion-icon>CLEAR</ion-button>
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                    <ion-col size-sm="3" offset-sm="0">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>
+                                    FILE UPLOADS
+                                </ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <ion-item>
+                                    <ion-label position="floating">JSON FILE UPLOAD 1</ion-label>
+                                    <ion-input type="text"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">JSON FILE UPLOAD 2</ion-label>
+                                    <ion-input type="text"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">JSON FILE UPLOAD 3</ion-label>
+                                    <ion-input type="text"></ion-input>
+                                </ion-item>
+                                <div class="ion-margin-vertical ion-text-right">
+                                    <ion-button id = "submit3" fill = "outline" color="success"><ion-icon slot = "start" name = "cloud-upload-outline"></ion-icon>UPLOAD</ion-button>
+                                    <ion-button id = "clear3" fill = "outline" color="danger"><ion-icon slot = "start" name = "close"></ion-icon>CLEAR</ion-button>
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-list id="aq-list">
+
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-content>
+    </ion-app>
+    <script src="app.js"></script>
+</body>
+</html>
